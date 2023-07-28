@@ -41,20 +41,19 @@ extension AccountSummaryViewController {
     private func setup() {
         setupTableView()
         setupTableHeaderView()
-//        fetchData()
+//        fetchAccounts()
         fetchDataAndLoadViews()
     }
     
     private func setupTableView() {
         tableView.backgroundColor = appColor
+        
         tableView.delegate = self
         tableView.dataSource = self
         
-        //register AccountSummaryCell to the AccountSummaryViewController
         tableView.register(AccountSummaryCell.self, forCellReuseIdentifier: AccountSummaryCell.reuseID)
         tableView.rowHeight = AccountSummaryCell.rowHeight
         tableView.tableFooterView = UIView()
-        
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
@@ -68,8 +67,6 @@ extension AccountSummaryViewController {
     }
     
     private func setupTableHeaderView() {
-//        let headerView = AccountSummaryHeaderView(frame: .zero)
-
         var size = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         size.width = UIScreen.main.bounds.width
         headerView.frame.size = size
@@ -94,20 +91,18 @@ extension AccountSummaryViewController: UITableViewDataSource {
     }
 }
 
-//MARK: - UITableViewDelegate
 extension AccountSummaryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
 }
 
-//MARK: - Actions
+// MARK: Actions
 extension AccountSummaryViewController {
     @objc func logoutTapped(sender: UIButton) {
         NotificationCenter.default.post(name: .logout, object: nil)
     }
 }
-
 
 // MARK: - Networking
 extension AccountSummaryViewController {
@@ -124,7 +119,6 @@ extension AccountSummaryViewController {
             }
         }
 
-        
         fetchAccounts(forUserId: "1") { result in
             switch result {
             case .success(let accounts):
@@ -145,10 +139,10 @@ extension AccountSummaryViewController {
     }
     
     private func configureTableCells(with accounts: [Account]) {
-            accountCellViewModels = accounts.map {
-                AccountSummaryCell.ViewModel(accountType: $0.type,
-                                             accountName: $0.name,
-                                             balance: $0.amount)
-            }
+        accountCellViewModels = accounts.map {
+            AccountSummaryCell.ViewModel(accountType: $0.type,
+                                         accountName: $0.name,
+                                         balance: $0.amount)
         }
+    }
 }
