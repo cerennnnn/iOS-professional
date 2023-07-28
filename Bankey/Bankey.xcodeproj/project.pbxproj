@@ -30,6 +30,8 @@
 		33E1FFAA2A7017A100BB219D /* Decimal+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E1FFA92A7017A100BB219D /* Decimal+Utils.swift */; };
 		33E1FFAC2A70184E00BB219D /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E1FFAB2A70184E00BB219D /* CurrencyFormatter.swift */; };
 		33E1FFBB2A70475200BB219D /* CurrencyFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E1FFBA2A70475200BB219D /* CurrencyFormatterTest.swift */; };
+		33E6C3772A740EE00092B735 /* ProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E6C3762A740EE00092B735 /* ProfileTests.swift */; };
+		33E6C3792A740FAB0092B735 /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E6C3782A740FAB0092B735 /* AccountTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		33E1FFAB2A70184E00BB219D /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		33E1FFB12A70462300BB219D /* BankeyUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankeyUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33E1FFBA2A70475200BB219D /* CurrencyFormatterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTest.swift; sourceTree = "<group>"; };
+		33E6C3762A740EE00092B735 /* ProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTests.swift; sourceTree = "<group>"; };
+		33E6C3782A740FAB0092B735 /* AccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,9 +208,27 @@
 		33E1FFB22A70462300BB219D /* BankeyUnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				33E1FFBA2A70475200BB219D /* CurrencyFormatterTest.swift */,
+				33E6C3752A740EBF0092B735 /* AccountSummary */,
+				33E6C3742A740EB20092B735 /* Util */,
 			);
 			path = BankeyUnitTests;
+			sourceTree = "<group>";
+		};
+		33E6C3742A740EB20092B735 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				33E1FFBA2A70475200BB219D /* CurrencyFormatterTest.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		33E6C3752A740EBF0092B735 /* AccountSummary */ = {
+			isa = PBXGroup;
+			children = (
+				33E6C3762A740EE00092B735 /* ProfileTests.swift */,
+				33E6C3782A740FAB0092B735 /* AccountTests.swift */,
+			);
+			path = AccountSummary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +360,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				33E1FFBB2A70475200BB219D /* CurrencyFormatterTest.swift in Sources */,
+				33E6C3792A740FAB0092B735 /* AccountTests.swift in Sources */,
+				33E6C3772A740EE00092B735 /* ProfileTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
